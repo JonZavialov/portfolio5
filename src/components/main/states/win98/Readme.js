@@ -32,7 +32,7 @@ function Readme({ addText }) {
         room, and some other cool features!
       </p>
       <p>
-        View the full README{" "}
+        View the full README
         <span
           className="link"
           onClick={() =>
