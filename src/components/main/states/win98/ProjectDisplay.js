@@ -13,7 +13,7 @@ function ProjectDisplay({ addText }) {
   return (
     <iframe
       id="project-display"
-      src="https://jonzav.me"
+      src="https://computer.jonzav.me"
       title="JonZav Windows 98 Emulator"
       onLoad={() => {
         if (isLoaded) return;
