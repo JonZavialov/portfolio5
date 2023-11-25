@@ -1,14 +1,13 @@
-import logo from "./assets/logo.svg";
+import MainContent from "./components/MainContent";
+import NavBar from "./components/NavBar";
+import "./styles/main.scss";
 
 function App() {
   return (
-    <img
-      src={logo}
-      alt="logo"
-      style={{
-        border: "1px solid black",
-      }}
-    />
+    <div id="homepage-container">
+      <NavBar />
+      <MainContent />
+    </div>
   );
 }
 
