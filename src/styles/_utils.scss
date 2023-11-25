@@ -1,0 +1,14 @@
+$bg-color: #0f111a;
+$border-color: white; //#0c0e15;
+$text-color: #7e93a2;
+$nav-bar-height: 70px;
+
+@mixin border($sides: all) {
+  @if $sides == all {
+    border: 3px solid $border-color;
+  } @else {
+    @each $side in $sides {
+      border-#{$side}: 3px solid $border-color;
+    }
+  }
+}

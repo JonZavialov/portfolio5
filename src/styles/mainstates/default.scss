@@ -1,0 +1,18 @@
+#default-display {
+  display: flex;
+  height: 100%;
+}
+
+#default-display #content {
+  margin: 20% auto;
+  text-align: center;
+}
+
+#default-display #content img {
+  width: 50%;
+  height: auto;
+}
+
+#default-display #content h1 span {
+  color: #03b0c1;
+}

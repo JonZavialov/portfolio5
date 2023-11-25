@@ -1,7 +1,26 @@
-$bg-color: #0f111a;
+@import "utils";
 
 #homepage-container {
   background-color: $bg-color;
+  font-family: monospace;
+  color: $text-color;
   height: 100vh;
   width: 100vw;
+}
+
+#nav-bar {
+  @include border(bottom);
+  width: 100%;
+  height: $nav-bar-height;
+  box-sizing: border-box;
+}
+
+#main-content {
+  height: calc(100% - #{$nav-bar-height});
+  width: 100%;
+  display: flex;
+}
+
+#main-container {
+  width: 100%;
 }
