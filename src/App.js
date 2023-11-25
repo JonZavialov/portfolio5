@@ -31,7 +31,7 @@ function App() {
         addText={addTextToTerminal}
       />
       <div id="main-content">
-        <SideBar />
+        <SideBar changeMain={changeMainContainerContent} />
         <MainContainer
           page={mainContainerPage}
           setPage={changeMainContainerContent}
