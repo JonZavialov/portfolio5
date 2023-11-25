@@ -1,0 +1,41 @@
+@import "utils";
+
+#nav-bar {
+  @include border(bottom);
+  width: 100%;
+  height: $nav-bar-height;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+
+  img {
+    height: 50%;
+    width: auto;
+    cursor: pointer;
+  }
+
+  img:hover {
+    opacity: 0.5;
+  }
+
+  #search-bar {
+    @include border(all);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    text-align: center;
+    font-size: 16px;
+    background-color: $bg-color-light;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 3px 0;
+    cursor: pointer;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
