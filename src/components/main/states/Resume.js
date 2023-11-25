@@ -1,11 +1,10 @@
 import "../../../styles/mainstates/resume.scss";
+import resume from "../../../assets/resume.png";
 
-function Resume({ setParent }) {
+function Resume() {
   return (
-    <div id="resume-container">
-      <p onClick={() => setParent("home")} id="back-button">
-        ← Back
-      </p>
+    <div id="resume-display">
+      <img src={resume} alt="resume" />
     </div>
   );
 }

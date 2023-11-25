@@ -22,7 +22,6 @@ function Terminal({ addText }) {
       return prevContent + addText;
     });
 
-    console.log(terminal.current.scrollHeight);
     terminal.current.scrollTop = terminal.current.scrollHeight;
   }, [addText]);
 

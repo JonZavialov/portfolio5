@@ -1,10 +1,13 @@
 @import "../utils";
 
-#resume-container {
-  margin: 30px 50px;
-}
+#resume-display {
+  @include custom-scroll-bar();
+  overflow-y: scroll;
+  margin: auto;
 
-#back-button {
-  @include text-button();
-  font-size: 18px;
+  img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+  }
 }
