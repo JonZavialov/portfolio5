@@ -4,33 +4,33 @@
   display: flex;
   height: 100%;
   width: 100%;
-}
 
-#default-display #content {
-  margin: auto;
-  width: 100%;
-  text-align: center;
+  #content {
+    margin: auto;
+    width: 100%;
+    text-align: center;
 
-  img {
-    width: 20%;
-    height: auto;
-  }
+    img {
+      width: 20%;
+      height: auto;
+    }
 
-  h1 span {
-    color: $highlight-color;
-  }
+    h1 span {
+      color: $highlight-color;
+    }
 
-  h2 {
-    margin-top: 30px;
-    font-style: italic;
-  }
+    h2 {
+      margin-top: 30px;
+      font-style: italic;
+    }
 
-  #descriptor {
-    font-size: 2em;
-    font-weight: bold;
-  }
+    #descriptor {
+      font-size: 2em;
+      font-weight: bold;
+    }
 
-  #resume-view-click {
-    @include text-button();
+    #resume-view-click {
+      @include text-button();
+    }
   }
 }

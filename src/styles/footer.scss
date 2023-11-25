@@ -17,9 +17,9 @@
 
   .link {
     cursor: pointer;
-  }
 
-  .link:hover {
-    color: white;
+    &:hover {
+      color: white;
+    }
   }
 }
