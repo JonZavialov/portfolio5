@@ -6,16 +6,28 @@
   height: $nav-bar-height;
   display: flex;
   align-items: center;
-  padding: 0 20px;
+
+  a {
+    all: unset;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 20px;
+
+    &:hover {
+      color: white;
+    }
+  }
 
   img {
     height: 50%;
     width: auto;
+    margin: 0 20px;
     cursor: pointer;
-  }
 
-  img:hover {
-    opacity: 0.5;
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   #search-bar {
