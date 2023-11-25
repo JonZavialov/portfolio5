@@ -18,12 +18,17 @@ function App() {
     setMainContainerPage(page);
   }
 
+  function addTextToTerminal(text) {
+    setAdditionalTerminalText(additionalTerminalText + text);
+  }
+
   return (
     <div id="homepage-container">
       <NavBar
         goHome={() => {
           changeMainContainerContent("home");
         }}
+        addText={addTextToTerminal}
       />
       <div id="main-content">
         <SideBar />
@@ -31,9 +36,10 @@ function App() {
           page={mainContainerPage}
           setPage={changeMainContainerContent}
           terminalText={additionalTerminalText}
+          addText={addTextToTerminal}
         />
       </div>
-      <Footer />
+      <Footer addText={addTextToTerminal} />
     </div>
   );
 }

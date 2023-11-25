@@ -1,20 +1,19 @@
 import logo from "../assets/logo.svg";
 import "../styles/navbar.scss";
+import redirect from "../utils/redirect";
 
-function NavBar({ goHome }) {
+function NavBar({ goHome, addText }) {
   return (
     <nav id="nav-bar">
       <img src={logo} alt="logo" onClick={goHome} />
-      <a
-        href="https://www.linkedin.com/in/jonzav/"
-        target="_blank"
-        rel="noreferrer"
+      <p
+        onClick={() => redirect("https://www.linkedin.com/in/jonzav/", addText)}
       >
         Linkedin
-      </a>
-      <a href="https://github.com/JonZavialov" target="_blank" rel="noreferrer">
+      </p>
+      <p onClick={() => redirect("https://github.com/JonZavialov", addText)}>
         GitHub
-      </a>
+      </p>
       <div id="search-bar">
         <span>🔎︎</span> My Portfolio
       </div>
