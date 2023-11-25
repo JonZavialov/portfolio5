@@ -1,0 +1,10 @@
+@import "../utils";
+
+#resume-container {
+  margin: 30px 50px;
+}
+
+#back-button {
+  @include text-button();
+  font-size: 18px;
+}

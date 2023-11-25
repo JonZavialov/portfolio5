@@ -12,7 +12,6 @@
   @include border(bottom);
   width: 100%;
   height: $nav-bar-height;
-  box-sizing: border-box;
 }
 
 #main-content {
@@ -23,4 +22,7 @@
 
 #main-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

@@ -1,18 +1,36 @@
+@import "../utils";
+
 #default-display {
   display: flex;
   height: 100%;
+  width: 100%;
 }
 
 #default-display #content {
-  margin: 20% auto;
+  margin: auto;
+  width: 100%;
   text-align: center;
-}
 
-#default-display #content img {
-  width: 50%;
-  height: auto;
-}
+  img {
+    width: 20%;
+    height: auto;
+  }
 
-#default-display #content h1 span {
-  color: #03b0c1;
+  h1 span {
+    color: $highlight-color;
+  }
+
+  h2 {
+    margin-top: 30px;
+    font-style: italic;
+  }
+
+  #descriptor {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  #resume-view-click {
+    @include text-button();
+  }
 }

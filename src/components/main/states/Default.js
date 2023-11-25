@@ -1,7 +1,8 @@
 import "../../../styles/mainstates/default.scss";
 import logo from "../../../assets/logo.svg";
+import ReactTypingEffect from "react-typing-effect";
 
-function Default() {
+function Default({ setParent }) {
   return (
     <div id="default-display">
       <div id="content">
@@ -9,7 +10,21 @@ function Default() {
         <h1>
           Hi, I'm <span>Jon Zavialov</span>
         </h1>
-        <h1>I design and develop websites</h1>
+        <ReactTypingEffect
+          id="descriptor"
+          staticText="I design and develop"
+          text={["Websites", "Apps", "Games", "UI/UX", "Software", "APIs"]}
+          speed={100}
+          eraseSpeed={200}
+          eraseDelay={800}
+          typingDelay={300}
+        />
+        <h2>
+          View my{" "}
+          <span id="resume-view-click" onClick={() => setParent("resume")}>
+            resume
+          </span>
+        </h2>
       </div>
     </div>
   );

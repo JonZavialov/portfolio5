@@ -2,6 +2,9 @@ $bg-color: #0f111a;
 $border-color: white; //#0c0e15;
 $text-color: #7e93a2;
 $nav-bar-height: 70px;
+$highlight-color: #03b0c1;
+$highlight-color-hover: #00565e;
+$highlight-color-active: #00363b;
 
 @mixin border($sides: all) {
   @if $sides == all {
@@ -10,5 +13,23 @@ $nav-bar-height: 70px;
     @each $side in $sides {
       border-#{$side}: 3px solid $border-color;
     }
+  }
+
+  box-sizing: border-box;
+}
+
+@mixin text-button() {
+  color: $highlight-color;
+  cursor: pointer;
+  font-style: italic;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+    color: $highlight-color-hover;
+  }
+
+  &:active {
+    color: $highlight-color-active;
   }
 }
