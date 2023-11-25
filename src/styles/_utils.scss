@@ -1,10 +1,13 @@
 $bg-color: #0f111a;
 $border-color: white; //#0c0e15;
 $text-color: #7e93a2;
-$nav-bar-height: 70px;
+$subtext-color: #4b526d;
 $highlight-color: #03b0c1;
 $highlight-color-hover: #00565e;
 $highlight-color-active: #00363b;
+
+$nav-bar-height: 70px;
+$footer-height: 30px;
 
 @mixin border($sides: all) {
   @if $sides == all {
