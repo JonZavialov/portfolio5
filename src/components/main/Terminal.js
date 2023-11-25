@@ -1,9 +1,8 @@
+import { useEffect } from "react";
 import "../../styles/terminal.scss";
-import { useEffect, useState, useRef } from "react";
 
 function Terminal({ addText }) {
-  const terminal = useRef(null);
-  const [content, setContent] = useState(`
+  const content = `
     <p class="green">Compiled successfully!</p>
     <br>
     <p>You can now view portfolio in the browser.</p>
@@ -15,21 +14,17 @@ function Terminal({ addText }) {
     <br>
     <p>webpack compiled <span class="green">successfully</span></p>
     <br>
-  `);
+  `;
 
   useEffect(() => {
-    setContent((prevContent) => {
-      return prevContent + addText;
-    });
-
-    terminal.current.scrollTop = terminal.current.scrollHeight;
+    const terminal = document.getElementById("terminal");
+    terminal.scrollTop = terminal.scrollHeight;
   }, [addText]);
 
   return (
     <div
       id="terminal"
-      ref={terminal}
-      dangerouslySetInnerHTML={{ __html: content }}
+      dangerouslySetInnerHTML={{ __html: content + addText }}
     ></div>
   );
 }

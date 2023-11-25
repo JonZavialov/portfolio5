@@ -1,30 +1,19 @@
 import Default from "./states/Default";
 import Terminal from "./Terminal";
 import Resume from "./states/Resume";
-import { useEffect, useState } from "react";
 
-function MainContainer() {
-  const [component, setComponent] = useState("");
-  const [additionalTerminalText, setAdditionalTerminalText] = useState("");
-
-  useEffect(() => {
-    if (!component) return;
-    setAdditionalTerminalText(`
-      <p>Navigated to <span class="green">${component}</span> page</p>
-    `);
-  }, [component]);
-
+function MainContainer({ page, setPage, terminalText }) {
   return (
     <div id="main-container">
       {(() => {
-        switch (component) {
+        switch (page) {
           case "resume":
-            return <Resume setParent={setComponent} />;
+            return <Resume setParent={setPage} />;
           default:
-            return <Default setParent={setComponent} />;
+            return <Default setParent={setPage} />;
         }
       })()}
-      <Terminal addText={additionalTerminalText} />
+      <Terminal addText={terminalText} />
     </div>
   );
 }

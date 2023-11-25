@@ -1,12 +1,20 @@
 import logo from "../assets/logo.svg";
 import "../styles/navbar.scss";
 
-function NavBar() {
+function NavBar({ goHome }) {
   return (
     <nav id="nav-bar">
-      <img src={logo} alt="logo" onClick={() => (window.location.href = "/")} />
-      <a href="https://www.linkedin.com/in/jonzav/">Linkedin</a>
-      <a href="https://github.com/JonZavialov">GitHub</a>
+      <img src={logo} alt="logo" onClick={goHome} />
+      <a
+        href="https://www.linkedin.com/in/jonzav/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Linkedin
+      </a>
+      <a href="https://github.com/JonZavialov" target="_blank" rel="noreferrer">
+        GitHub
+      </a>
       <div id="search-bar">
         <span>🔎︎</span> My Portfolio
       </div>
