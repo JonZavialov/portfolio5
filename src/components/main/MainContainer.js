@@ -25,7 +25,7 @@ function MainContainer({ page, setPage, terminalText, addText }) {
             return (
               <ProjectDisplay
                 addText={addText}
-                displayName="Windows 98 Documentation"
+                displayName="JonZav API Documentation"
                 URL="https://api.jonzav.me/"
               />
             );
