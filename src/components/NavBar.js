@@ -2,7 +2,14 @@ import logo from "../assets/logo.svg";
 import "../styles/navbar.scss";
 import redirect from "../utils/redirect";
 
-function NavBar({ goHome, addText }) {
+function NavBar({
+  goHome,
+  goBack,
+  backDisabled,
+  goForward,
+  forwardDisabled,
+  addText,
+}) {
   return (
     <nav id="nav-bar">
       <img src={logo} alt="logo" onClick={goHome} />
@@ -15,8 +22,12 @@ function NavBar({ goHome, addText }) {
         GitHub
       </p>
       <div id="search-bar-container">
-        <p>←</p>
-        <p>→</p>
+        <p onClick={goBack} className={backDisabled ? "disabled" : ""}>
+          ←
+        </p>
+        <p onClick={goForward} className={forwardDisabled ? "disabled" : ""}>
+          →
+        </p>
         <div id="search-bar">
           <span>🔎︎</span> My Portfolio
         </div>

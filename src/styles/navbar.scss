@@ -37,6 +37,7 @@
     margin-right: auto;
     width: 40%;
     display: flex;
+    user-select: none;
 
     p {
       margin: 0 10px;
@@ -46,6 +47,11 @@
       &:hover {
         color: white;
       }
+    }
+
+    p.disabled {
+      color: $subtext-color;
+      cursor: default;
     }
 
     #search-bar {
