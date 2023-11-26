@@ -1,28 +1,28 @@
 import { useEffect, useState } from "react";
 import "../../../../styles/mainstates/win98-display.scss";
 
-function ProjectDisplay({ addText }) {
+function ProjectDisplay({ addText, displayName, URL }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const initializeDate = new Date().getTime();
 
   useEffect(() => {
-    addText("<p>Deploying Windows 98 Emulator...</p>");
+    addText(`<p>Deploying ${displayName}...</p>`);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [displayName]);
 
   return (
     <iframe
       id="project-display"
-      src="https://computer.jonzav.me"
-      title="JonZav Windows 98 Emulator"
+      src={URL}
+      title={displayName}
       onLoad={() => {
         if (isLoaded) return;
         addText(
           `
             <br>
-            <p class="green">Windows 98 Emulator successfully initialized in ${
-              new Date().getTime() - initializeDate
-            }ms</p>
+            <p class="green">${displayName} successfully initialized in ${
+            new Date().getTime() - initializeDate
+          }ms</p>
           `
         );
         setIsLoaded(true);

@@ -14,7 +14,21 @@ function MainContainer({ page, setPage, terminalText, addText }) {
           case "win98-readme":
             return <Readme addText={addText} />;
           case "win98":
-            return <ProjectDisplay addText={addText} />;
+            return (
+              <ProjectDisplay
+                addText={addText}
+                displayName="Windows 98 Emulator"
+                URL="https://computer.jonzav.me"
+              />
+            );
+          case "win98-docs":
+            return (
+              <ProjectDisplay
+                addText={addText}
+                displayName="Windows 98 Documentation"
+                URL="https://api.jonzav.me/"
+              />
+            );
           default:
             return <Default setParent={setPage} />;
         }

@@ -32,7 +32,7 @@ function Readme({ addText }) {
         room, and some other cool features!
       </p>
       <p>
-        View the full README
+        View the full README&nbsp;
         <span
           className="link"
           onClick={() =>
@@ -41,7 +41,10 @@ function Readme({ addText }) {
         >
           here
         </span>
-        , or run the project by navigating to index.js.
+        , or run the project by navigating to&nbsp;
+        <span className="filename">index.js</span>. You can also access the
+        documentation for the backend API by going to&nbsp;
+        <span className="filename">backend-docs.jsx</span>.
       </p>
     </div>
   );

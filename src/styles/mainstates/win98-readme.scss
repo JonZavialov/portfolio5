@@ -41,6 +41,13 @@
     @include text-button();
   }
 
+  span.filename {
+    background-color: rgba(110, 118, 129, 0.4);
+    padding: 1px 4px;
+    border-radius: 5px;
+    font-family: "Courier New", Courier, monospace;
+  }
+
   #badge-row {
     display: flex;
     justify-content: center;
