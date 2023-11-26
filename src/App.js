@@ -10,7 +10,7 @@ function App() {
   const [additionalTerminalText, setAdditionalTerminalText] = useState("");
   const [pageHistory, setPageHistory] = useState(["home"]);
   const [pageHistoryIndex, setPageHistoryIndex] = useState(0);
-  const [mainContainerPage, setMainContainerPage] = useState("");
+  const [mainContainerPage, setMainContainerPage] = useState("home");
 
   function changeMainContainerContent(page) {
     if (page === mainContainerPage) return;

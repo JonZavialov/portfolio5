@@ -27,7 +27,7 @@ function MainContainer({ page, setPage, terminalText, addText }) {
 
   return (
     <div id="main-container">
-      {pages[page] || pages["home"]}
+      {pages[page]}
       <Terminal addText={terminalText} />
     </div>
   );
