@@ -14,8 +14,12 @@ function NavBar({ goHome, addText }) {
       <p onClick={() => redirect("https://github.com/JonZavialov", addText)}>
         GitHub
       </p>
-      <div id="search-bar">
-        <span>🔎︎</span> My Portfolio
+      <div id="search-bar-container">
+        <p>←</p>
+        <p>→</p>
+        <div id="search-bar">
+          <span>🔎︎</span> My Portfolio
+        </div>
       </div>
     </nav>
   );

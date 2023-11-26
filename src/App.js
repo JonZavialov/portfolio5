@@ -6,9 +6,9 @@ import SideBar from "./components/sidebar/SideBar";
 import { useState } from "react";
 
 function App() {
+  // Terminal text needs to be here so it isn't erased when the MainContainer component is re-rendered
   const [additionalTerminalText, setAdditionalTerminalText] = useState("");
   const [mainContainerPage, setMainContainerPage] = useState("");
-  // Terminal text needs to be here so it isn't erased when the MainContainer component is re-rendered
 
   function changeMainContainerContent(page) {
     setAdditionalTerminalText(

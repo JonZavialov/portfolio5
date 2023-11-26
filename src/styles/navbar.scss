@@ -29,24 +29,40 @@
     }
   }
 
-  #search-bar {
-    @include border(all);
+  #search-bar-container {
     position: absolute;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
-    text-align: center;
-    font-size: 16px;
-    background-color: $bg-color-light;
-    border-width: 1px;
-    border-radius: 5px;
-    padding: 3px 0;
-    cursor: pointer;
+    width: 40%;
+    display: flex;
 
-    span {
-      font-weight: bold;
+    p {
+      margin: 0 10px;
+      cursor: pointer;
+      font-size: 30px;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    #search-bar {
+      @include border(all);
+      text-align: center;
+      background-color: $bg-color-light;
+      border-width: 1px;
+      border-radius: 5px;
+      padding: 3px 0;
+      width: 100%;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 5px 0;
+
+      span {
+        font-weight: bold;
+      }
     }
   }
 }
