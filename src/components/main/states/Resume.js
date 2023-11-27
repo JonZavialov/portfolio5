@@ -5,6 +5,8 @@ import { useState } from "react";
 function Resume() {
   const [loading, setLoading] = useState(true);
 
+  document.title = "Jonathan Zavialov | Resume";
+
   return (
     <div id="resume-display">
       {loading && <h1>Loading...</h1>}

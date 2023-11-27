@@ -3,6 +3,8 @@ import logo from "../../../assets/logo.svg";
 import ReactTypingEffect from "react-typing-effect";
 
 function Default({ setParent }) {
+  document.title = "Jonathan Zavialov | Home";
+
   return (
     <div id="default-display">
       <div id="content">

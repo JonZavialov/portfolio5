@@ -5,6 +5,8 @@ function ProjectDisplay({ addText, displayName, URL }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const initializeDate = new Date().getTime();
 
+  document.title = "Jonathan Zavialov | " + displayName;
+
   useEffect(() => {
     addText(`<p>Deploying ${displayName}...</p>`);
     // eslint-disable-next-line react-hooks/exhaustive-deps

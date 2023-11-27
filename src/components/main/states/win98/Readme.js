@@ -4,6 +4,8 @@ import ReadmeBadge from "./ReadmeBadge";
 import win98Logo from "../../../../assets/win98.png";
 
 function Readme({ addText }) {
+  document.title = "Jonathan Zavialov | Windows 98 README";
+
   return (
     <div id="readme">
       <div id="header-row">
