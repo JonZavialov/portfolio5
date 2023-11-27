@@ -29,23 +29,12 @@ function App() {
     setAdditionalTerminalText(additionalTerminalText + text);
   }
 
-  function goBack() {
-    if (pageHistory.length <= 1 || pageHistoryIndex === 0) return;
+  function returnToPage(index) {
+    // Used to go back and forward
+    // Checking if this is allowed is done in the navbar buttons
 
-    setPageHistoryIndex(pageHistoryIndex - 1);
-    const page = pageHistory[pageHistoryIndex - 1];
-    setMainContainerPage(page);
-    setAdditionalTerminalText(
-      additionalTerminalText +
-        `<p>Returned to <span class="green">${page}</span> page</p>`
-    );
-  }
-
-  function goForward() {
-    if (pageHistoryIndex === pageHistory.length - 1) return;
-
-    setPageHistoryIndex(pageHistoryIndex + 1);
-    const page = pageHistory[pageHistoryIndex + 1];
+    setPageHistoryIndex(index);
+    const page = pageHistory[index];
     setMainContainerPage(page);
     setAdditionalTerminalText(
       additionalTerminalText +
@@ -59,9 +48,13 @@ function App() {
         goHome={() => {
           changeMainContainerContent("home");
         }}
-        goBack={goBack}
+        goBack={() => {
+          returnToPage(pageHistoryIndex - 1);
+        }}
         backDisabled={pageHistory.length <= 1 || pageHistoryIndex === 0}
-        goForward={goForward}
+        goForward={() => {
+          returnToPage(pageHistoryIndex + 1);
+        }}
         forwardDisabled={pageHistoryIndex === pageHistory.length - 1}
         addText={addTextToTerminal}
       />

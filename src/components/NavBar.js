@@ -23,13 +23,17 @@ function NavBar({
       </p>
       <div id="search-bar-container">
         <i
-          onClick={goBack}
+          onClick={() => {
+            if (!backDisabled) goBack();
+          }}
           className={
             backDisabled ? "fa fa-arrow-left disabled" : "fa fa-arrow-left"
           }
         ></i>
         <i
-          onClick={goForward}
+          onClick={() => {
+            if (!forwardDisabled) goForward();
+          }}
           className={
             forwardDisabled ? "fa fa-arrow-right disabled" : "fa fa-arrow-right"
           }
