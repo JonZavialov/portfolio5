@@ -22,14 +22,21 @@ function NavBar({
         GitHub
       </p>
       <div id="search-bar-container">
-        <p onClick={goBack} className={backDisabled ? "disabled" : ""}>
-          ←
-        </p>
-        <p onClick={goForward} className={forwardDisabled ? "disabled" : ""}>
-          →
-        </p>
+        <i
+          onClick={goBack}
+          className={
+            backDisabled ? "fa fa-arrow-left disabled" : "fa fa-arrow-left"
+          }
+        ></i>
+        <i
+          onClick={goForward}
+          className={
+            forwardDisabled ? "fa fa-arrow-right disabled" : "fa fa-arrow-right"
+          }
+        ></i>
         <div id="search-bar">
-          <span>🔎︎</span> My Portfolio
+          <i className="fa fa-search"></i>
+          My Portfolio
         </div>
       </div>
     </nav>

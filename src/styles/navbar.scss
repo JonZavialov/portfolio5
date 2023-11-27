@@ -39,17 +39,19 @@
     display: flex;
     user-select: none;
 
-    p {
-      margin: 0 10px;
+    i.fa-arrow-right,
+    i.fa-arrow-left {
+      margin: auto 10px;
       cursor: pointer;
-      font-size: 30px;
+      font-size: 19px;
 
       &:hover {
         color: white;
       }
     }
 
-    p.disabled {
+    i.fa-arrow-right.disabled,
+    i.fa-arrow-left.disabled {
       color: $subtext-color;
       cursor: default;
     }
@@ -66,8 +68,8 @@
       font-size: 16px;
       margin: 5px 0;
 
-      span {
-        font-weight: bold;
+      i {
+        margin: 0 10px;
       }
     }
   }

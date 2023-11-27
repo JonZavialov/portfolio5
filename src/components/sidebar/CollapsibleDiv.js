@@ -6,7 +6,7 @@ function CollapsableDiv({ name, children }) {
   return (
     <div className="explorer-element">
       <p onClick={() => setClosed(!closed)}>
-        <span>{closed ? "⏵" : "⏷"}</span>
+        <i className={`fa fa-caret-${closed ? "right" : "down"}`} />
         {name}
       </p>
       <div className={`explorer-children-container ${closed ? "closed" : ""}`}>
