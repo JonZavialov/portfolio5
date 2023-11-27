@@ -22,7 +22,7 @@ function App() {
 
     setMainContainerPage(page);
     setPageHistory([...pageHistory, page]);
-    setPageHistoryIndex(pageHistoryIndex + 1);
+    setPageHistoryIndex(pageHistory.length);
   }
 
   function addTextToTerminal(text) {
