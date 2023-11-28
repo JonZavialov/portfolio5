@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import MainContainer from "./components/main/MainContainer";
 import SideBar from "./components/sidebar/SideBar";
 import { useState } from "react";
+import MobileView from "./components/mobileview/MobileView";
 
 function App() {
   // Terminal text needs to be here so it isn't erased when the MainContainer component is re-rendered
@@ -42,7 +43,10 @@ function App() {
     );
   }
 
-  return (
+  if (window.innerWidth < 700) {
+    return <MobileView />;
+  }
+  else return (
     <div id="homepage-container">
       <NavBar
         goHome={() => {

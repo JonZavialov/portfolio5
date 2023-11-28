@@ -2,7 +2,7 @@ import "../../../styles/mainstates/default.scss";
 import logo from "../../../assets/logo.svg";
 import ReactTypingEffect from "react-typing-effect";
 
-function Default({ setParent }) {
+function Default({ setParent, mobileView }) {
   document.title = "Jonathan Zavialov | Home";
 
   return (
@@ -22,10 +22,14 @@ function Default({ setParent }) {
           typingDelay={300}
         />
         <h2>
-          View my{" "}
+          View my&nbsp;
           <span id="resume-view-click" onClick={() => setParent("resume")}>
             resume
           </span>
+          {
+            mobileView &&
+            ", or view this website on desktop to see more of my projects."
+          }
         </h2>
       </div>
     </div>
