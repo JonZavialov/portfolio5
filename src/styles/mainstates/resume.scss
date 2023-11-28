@@ -5,6 +5,20 @@
   overflow-y: scroll;
   margin: auto;
 
+  #buttons-row {
+    display: flex;
+
+    p {
+      @include text-button();
+      font-size: 16px;
+      margin: 10px 15px;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+
   img {
     width: 100%;
     max-width: 1000px;

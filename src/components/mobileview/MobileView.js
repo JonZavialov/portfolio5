@@ -15,7 +15,7 @@ function MobileView(){
                 !showResume ?
                 <Default setParent={() => setShowResume(true)} mobileView />
                 :
-                <Resume />
+                <Resume goBack={() => setShowResume(false)} />
             }
             <Footer minified/>
         </div>

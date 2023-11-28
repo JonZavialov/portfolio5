@@ -7,7 +7,7 @@ import ProjectDisplay from "./states/win98/ProjectDisplay";
 function MainContainer({ page, setPage, terminalText, addText }) {
   const pages = {
     "home": <Default setParent={setPage} />,
-    "resume": <Resume setParent={setPage} />,
+    "resume": <Resume setParent={setPage} addToTerminal={addText} goBack={() => setPage("home")} />,
     "win98-readme": <Readme addText={addText} />,
     "win98": (
       <ProjectDisplay
