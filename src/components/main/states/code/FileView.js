@@ -13,6 +13,8 @@ function FileView({ path }){
         const restOfPath = path.substring(path.indexOf("/") + 1);
         const fileExtension = path.split(".")[1];
         
+        document.title = `Jonathan Zavialov | ${repoName}`;
+
         sendRequestToBackend(`v1/github/repoContents?repo=${repoName}&path=${restOfPath}`)
         .then((res) => {
             if (/(jpg|jpeg|png|ico)$/i.test(fileExtension)) {
