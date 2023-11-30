@@ -1,10 +1,12 @@
 @import "../utils";
 
 #readme {
+  @include custom-scroll-bar();
   margin: 0 auto;
   color: white;
-  width: 90%;
+  width: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow-y: scroll;
 
   #header-row {
     display: flex;
@@ -34,7 +36,11 @@
   }
 
   h3 {
-    margin: 40px 0;
+    margin: 40px 15px;
+  }
+
+  & > p {
+    margin: 16px 15px;
   }
 
   span.link {

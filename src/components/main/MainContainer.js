@@ -3,6 +3,7 @@ import Terminal from "./Terminal";
 import Resume from "./states/Resume";
 import Readme from "./states/win98/Readme";
 import ProjectDisplay from "./states/win98/ProjectDisplay";
+import FileView from "./states/code/FileView";
 
 function MainContainer({ page, setPage, terminalText, addText }) {
   const pages = {
@@ -23,11 +24,12 @@ function MainContainer({ page, setPage, terminalText, addText }) {
         URL="https://api.jonzav.me/"
       />
     ),
+    "code": <FileView path={page.split(" ")[1]} />,
   };
 
   return (
     <div id="main-container">
-      {pages[page]}
+      {pages[page.split(" ")[0]]}
       <Terminal addText={terminalText} />
     </div>
   );

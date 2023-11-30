@@ -9,6 +9,7 @@ $highlight-color-active: #00363b;
 
 $nav-bar-height: 70px;
 $footer-height: 30px;
+$side-bar-width: 250px;
 
 @mixin border($sides: all) {
   @if $sides == all {
@@ -41,6 +42,7 @@ $footer-height: 30px;
 @mixin custom-scroll-bar() {
   &::-webkit-scrollbar {
     width: 0.5em;
+    height: 0.5em;
   }
 
   &::-webkit-scrollbar-track {

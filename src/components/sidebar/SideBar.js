@@ -1,5 +1,8 @@
 import "../../styles/sidebar.scss";
 import CollapsableDiv from "./CollapsibleDiv";
+import CollapsibleRepo from "./CollapsibleRepo";
+
+const repoNames = ["locatia"]
 
 function SideBar({ changeMain }) {
   return (
@@ -15,6 +18,11 @@ function SideBar({ changeMain }) {
         <p onClick={() => changeMain("win98")}>index.js</p>
         <p onClick={() => changeMain("win98-docs")}>backend-docs.jsx</p>
       </CollapsableDiv>
+      {
+        repoNames.map((repoName) => 
+          <CollapsibleRepo repoName={repoName} path="/" key={repoName} setMainWindow={changeMain} />
+        )
+      }
     </div>
   );
 }

@@ -15,11 +15,24 @@ function App() {
 
   function changeMainContainerContent(page) {
     if (page === mainContainerPage) return;
+    else if (typeof page === "object") {
+      // Set content to a repo file
 
-    setAdditionalTerminalText(
-      additionalTerminalText +
-        `<p>Navigated to <span class="green">${page}</span> page</p>`
-    );
+      const newPage = `code ${page.repo}/${page.path}`
+      if (newPage === mainContainerPage) return;
+      
+      setAdditionalTerminalText(
+        additionalTerminalText +
+          `<p>Navigated to <span class="blue">${page.repo}/${page.path}</span> file</p>`
+      );
+
+      page = newPage;
+    } else {
+      setAdditionalTerminalText(
+        additionalTerminalText +
+          `<p>Navigated to <span class="green">${page}</span> page</p>`
+      );
+    }
 
     setMainContainerPage(page);
     setPageHistory([...pageHistory, page]);

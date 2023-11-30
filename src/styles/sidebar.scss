@@ -2,10 +2,13 @@
 
 #side-bar {
   @include border(right);
-  width: 300px;
+  @include custom-scroll-bar();
+  width: $side-bar-width;
   height: 100%;
   padding-left: 20px;
   font-weight: bold;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   #header {
     font-size: 18px;
@@ -23,10 +26,13 @@
 
     p {
       margin: 8px 0;
-    }
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
 
-    p:hover {
-      color: white;
+      &:hover {
+        color: white;
+      }
     }
 
     i {
