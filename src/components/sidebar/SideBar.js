@@ -17,6 +17,7 @@ function SideBar({ changeMain }) {
         <p onClick={() => changeMain("win98-readme")}>README.md</p>
         <p onClick={() => changeMain("win98")}>index.js</p>
         <p onClick={() => changeMain("win98-docs")}>backend-docs.jsx</p>
+        <CollapsibleRepo repoName="portfolio4" path="/" setMainWindow={changeMain} />
       </CollapsableDiv>
       {
         repoNames.map((repoName) => 

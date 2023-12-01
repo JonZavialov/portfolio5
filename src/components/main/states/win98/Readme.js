@@ -46,7 +46,8 @@ function Readme({ addText }) {
         , or run the project by navigating to&nbsp;
         <span className="filename">index.js</span>. You can also access the
         documentation for the backend API by going to&nbsp;
-        <span className="filename">backend-docs.jsx</span>.
+        <span className="filename">backend-docs.jsx</span>. View the code in the&nbsp;
+        <span className="filename">portfolio4</span> folder.
       </p>
     </div>
   );
