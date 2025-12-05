@@ -15,7 +15,15 @@ function Default({ setParent, mobileView }) {
         <ReactTypingEffect
           id="descriptor"
           staticText="I design and develop"
-          text={["Websites", "Apps", "Games", "UI/UX", "Software", "APIs"]}
+          text={[
+            "Websites",
+            "Apps",
+            "Games",
+            "UI/UX",
+            "Software",
+            "APIs",
+            "Vehicles",
+          ]}
           speed={100}
           eraseSpeed={200}
           eraseDelay={800}
@@ -26,10 +34,8 @@ function Default({ setParent, mobileView }) {
           <span id="resume-view-click" onClick={() => setParent("resume")}>
             resume
           </span>
-          {
-            mobileView &&
-            ", or view this website on desktop to see more of my projects."
-          }
+          {mobileView &&
+            ", or view this website on desktop to see more of my projects."}
         </h2>
       </div>
     </div>

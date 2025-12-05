@@ -2,7 +2,7 @@ import "../../styles/sidebar.scss";
 import CollapsableDiv from "./CollapsibleDiv";
 import CollapsibleRepo from "./CollapsibleRepo";
 
-const repoNames = ["locatia"]
+const repoNames = ["locatia"];
 
 function SideBar({ changeMain }) {
   return (
@@ -17,13 +17,20 @@ function SideBar({ changeMain }) {
         <p onClick={() => changeMain("win98-readme")}>README.md</p>
         <p onClick={() => changeMain("win98")}>index.js</p>
         <p onClick={() => changeMain("win98-docs")}>backend-docs.jsx</p>
-        <CollapsibleRepo repoName="portfolio4" path="/" setMainWindow={changeMain} />
+        <CollapsibleRepo
+          repoName="portfolio4"
+          path="/"
+          setMainWindow={changeMain}
+        />
       </CollapsableDiv>
-      {
-        repoNames.map((repoName) => 
-          <CollapsibleRepo repoName={repoName} path="/" key={repoName} setMainWindow={changeMain} />
-        )
-      }
+      {repoNames.map((repoName) => (
+        <CollapsibleRepo
+          repoName={repoName}
+          path="/"
+          key={repoName}
+          setMainWindow={changeMain}
+        />
+      ))}
     </div>
   );
 }
