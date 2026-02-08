@@ -7,10 +7,16 @@ import FileView from "./states/code/FileView";
 
 function MainContainer({ page, setPage, terminalText, addText }) {
   const pages = {
-    "home": <Default setParent={setPage} />,
-    "resume": <Resume setParent={setPage} addToTerminal={addText} goBack={() => setPage("home")} />,
+    home: <Default setParent={setPage} />,
+    resume: (
+      <Resume
+        setParent={setPage}
+        addToTerminal={addText}
+        goBack={() => setPage("home")}
+      />
+    ),
     "win98-readme": <Readme addText={addText} />,
-    "win98": (
+    win98: (
       <ProjectDisplay
         addText={addText}
         displayName="Windows 98 Emulator"
@@ -24,7 +30,14 @@ function MainContainer({ page, setPage, terminalText, addText }) {
         URL="https://api.jonzav.me/"
       />
     ),
-    "code": <FileView path={page.split(" ")[1]} />,
+    code: <FileView path={page.split(" ")[1]} />,
+    segmint: (
+      <ProjectDisplay
+        addText={addText}
+        displayName="Segmint"
+        URL="https://segmint.jonzav.me"
+      />
+    ),
   };
 
   return (
