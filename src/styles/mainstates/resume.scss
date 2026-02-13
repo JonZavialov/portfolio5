@@ -2,19 +2,27 @@
 
 #resume-display {
   @include custom-scroll-bar();
-  overflow-y: scroll;
-  margin: auto;
+  overflow-y: auto;
+  margin: 0 auto;
+  width: 100%;
 
   #buttons-row {
     display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
 
-    p {
-      @include text-button();
-      font-size: 16px;
-      margin: 10px 15px;
+    button {
+      @include border(all);
+      background: transparent;
+      color: $highlight-color;
+      min-height: 44px;
+      padding: 8px 12px;
+      font-size: 1rem;
+      cursor: pointer;
 
       i {
-        margin-right: 5px;
+        margin-right: 6px;
       }
     }
   }
@@ -23,5 +31,6 @@
     width: 100%;
     max-width: 1000px;
     height: auto;
+    aspect-ratio: 916 / 1264;
   }
 }

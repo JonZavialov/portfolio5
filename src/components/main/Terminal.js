@@ -18,7 +18,7 @@ function Terminal({ addText }) {
 
   useEffect(() => {
     const terminal = document.getElementById("terminal");
-    terminal.scrollTop = terminal.scrollHeight;
+    if (terminal) terminal.scrollTop = terminal.scrollHeight;
   }, [addText]);
 
   return (

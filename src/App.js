@@ -4,10 +4,8 @@ import Footer from "./components/Footer";
 import MainContainer from "./components/main/MainContainer";
 import SideBar from "./components/sidebar/SideBar";
 import { useState } from "react";
-import MobileView from "./components/mobileview/MobileView";
 
 function App() {
-  // Terminal text needs to be here so it isn't erased when the MainContainer component is re-rendered
   const [additionalTerminalText, setAdditionalTerminalText] = useState("");
   const [pageHistory, setPageHistory] = useState(["home"]);
   const [pageHistoryIndex, setPageHistoryIndex] = useState(0);
@@ -15,22 +13,21 @@ function App() {
 
   function changeMainContainerContent(page) {
     if (page === mainContainerPage) return;
-    else if (typeof page === "object") {
-      // Set content to a repo file
 
-      const newPage = `code ${page.repo}/${page.path}`
+    if (typeof page === "object") {
+      const newPage = `code ${page.repo}/${page.path}`;
       if (newPage === mainContainerPage) return;
-      
+
       setAdditionalTerminalText(
         additionalTerminalText +
-          `<p>Navigated to <span class="blue">${page.repo}/${page.path}</span> file</p>`
+          `<p>Navigated to <span class="blue">${page.repo}/${page.path}</span> file</p>`,
       );
 
       page = newPage;
     } else {
       setAdditionalTerminalText(
         additionalTerminalText +
-          `<p>Navigated to <span class="green">${page}</span> page</p>`
+          `<p>Navigated to <span class="green">${page}</span> page</p>`,
       );
     }
 
@@ -44,24 +41,19 @@ function App() {
   }
 
   function returnToPage(index) {
-    // Used to go back and forward
-    // Checking if this is allowed is done in the navbar buttons
-
     setPageHistoryIndex(index);
     const page = pageHistory[index];
     setMainContainerPage(page);
     setAdditionalTerminalText(
       additionalTerminalText +
-        `<p>Returned to <span class="green">${page}</span> page</p>`
+        `<p>Returned to <span class="green">${page}</span> page</p>`,
     );
   }
 
-  if (window.innerWidth < 700) {
-    return <MobileView />;
-  }
-  else return (
+  return (
     <div id="homepage-container">
       <NavBar
+        currentPage={mainContainerPage.split(" ")[0]}
         goHome={() => {
           changeMainContainerContent("home");
         }}
@@ -74,6 +66,7 @@ function App() {
         }}
         forwardDisabled={pageHistoryIndex === pageHistory.length - 1}
         addText={addTextToTerminal}
+        changeMain={changeMainContainerContent}
       />
       <div id="main-content">
         <SideBar changeMain={changeMainContainerContent} />

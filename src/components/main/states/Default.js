@@ -2,28 +2,20 @@ import "../../../styles/mainstates/default.scss";
 import logo from "../../../assets/logo.svg";
 import ReactTypingEffect from "react-typing-effect";
 
-function Default({ setParent, mobileView }) {
+function Default({ setParent }) {
   document.title = "Jonathan Zavialov | Home";
 
   return (
     <div id="default-display">
       <div id="content">
-        <img src={logo} alt="Jonathan Zavialov" />
+        <img src={logo} alt="Jonathan Zavialov" loading="lazy" />
         <h1>
-          Hi, I'm <span>Jon Zavialov</span>
+          Hi, I&apos;m <span>Jon Zavialov</span>
         </h1>
         <ReactTypingEffect
           id="descriptor"
           staticText="I design and develop"
-          text={[
-            "Websites",
-            "Apps",
-            "Games",
-            "UI/UX",
-            "Software",
-            "APIs",
-            "Vehicles",
-          ]}
+          text={["Websites", "Apps", "Games", "UI/UX", "Software", "APIs", "Vehicles"]}
           speed={100}
           eraseSpeed={200}
           eraseDelay={800}
@@ -34,8 +26,7 @@ function Default({ setParent, mobileView }) {
           <span id="resume-view-click" onClick={() => setParent("resume")}>
             resume
           </span>
-          {mobileView &&
-            ", or view this website on desktop to see more of my projects."}
+          .
         </h2>
       </div>
     </div>
