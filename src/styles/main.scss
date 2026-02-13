@@ -1,22 +1,113 @@
 @import "utils";
 
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: monospace;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+a,
+button,
+span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 #homepage-container {
   background-color: $bg-color;
-  font-family: monospace;
-  color: $text-color;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #main-content {
-  height: calc(100% - #{$nav-bar-height} - #{$footer-height});
+  flex: 1;
+  min-height: 0;
   width: 100%;
   display: flex;
+  flex-direction: column;
 }
 
 #main-container {
-  width: calc(100vw - #{$side-bar-width});
+  width: 100%;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+
+  #page-content {
+    flex: 1;
+    min-height: 0;
+    padding: clamp(12px, 2.5vw, 24px);
+  }
+
+  #terminal-toggle {
+    @include border(top);
+    background: $bg-color-light;
+    color: $text-color;
+    min-height: 44px;
+    padding: 10px 16px;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .terminal-shell {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease;
+
+    &.open {
+      max-height: 260px;
+    }
+  }
+}
+
+@media (min-width: $bp-md) {
+  #main-content {
+    flex-direction: row;
+  }
+
+  #main-container {
+    width: calc(100% - #{$side-bar-width});
+
+    #terminal-toggle {
+      display: none;
+    }
+
+    .terminal-shell {
+      max-height: 240px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }

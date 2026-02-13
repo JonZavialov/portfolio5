@@ -2,74 +2,198 @@
 
 #nav-bar {
   @include border(bottom);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: $bg-color;
   width: 100%;
-  height: $nav-bar-height;
-  display: flex;
+  min-height: $nav-bar-height;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
   align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
 
-  p {
+  img {
+    height: 40px;
+    width: auto;
     cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0 20px;
 
     &:hover {
-      color: white;
+      opacity: 0.8;
     }
   }
 
-  img {
-    height: 50%;
-    width: auto;
-    margin: 0 20px;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.5;
-    }
+  #desktop-links {
+    display: none;
   }
 
   #search-bar-container {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
     display: flex;
-    user-select: none;
-
-    i.fa-arrow-right,
-    i.fa-arrow-left {
-      margin: auto 10px;
-      cursor: pointer;
-      font-size: 19px;
-
-      &:hover {
-        color: white;
-      }
-    }
-
-    i.fa-arrow-right.disabled,
-    i.fa-arrow-left.disabled {
-      color: $subtext-color;
-      cursor: default;
-    }
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
 
     #search-bar {
       @include border(all);
-      text-align: center;
       background-color: $bg-color-light;
-      border-width: 1px;
-      border-radius: 5px;
-      padding: 3px 0;
-      width: 100%;
-      cursor: pointer;
-      font-size: 16px;
-      margin: 5px 0;
+      border-radius: 6px;
+      padding: 10px;
+      width: min(100%, 280px);
+      min-height: 44px;
+      font-size: 0.95rem;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: $subtext-color;
+    }
+  }
+}
 
-      i {
-        margin: 0 10px;
+.icon-button {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: $text-color;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+  }
+
+  &.disabled {
+    color: $subtext-color;
+    cursor: not-allowed;
+  }
+}
+
+.mobile-only {
+  display: inline-flex;
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+  z-index: 49;
+
+  &.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: min(88vw, 340px);
+  height: 100dvh;
+  background: $bg-color-light;
+  border-right: 2px solid $border-color;
+  transform: translateX(-100%);
+  transition: transform 200ms ease;
+  z-index: 50;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin: 0;
+      font-size: 1.125rem;
+      color: white;
+      font-weight: 700;
+    }
+  }
+
+  .drawer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    button,
+    a {
+      @include border(all);
+      min-height: 44px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      text-align: left;
+      background: transparent;
+      color: $text-color;
+      text-decoration: none;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+
+      &.active {
+        color: white;
+        border-color: $highlight-color;
+      }
+    }
+  }
+}
+
+@media (min-width: $bp-sm) {
+  #nav-bar {
+    #search-bar-container #search-bar {
+      display: flex;
+    }
+  }
+}
+
+@media (min-width: $bp-md) {
+  .mobile-only,
+  .mobile-nav-drawer,
+  .mobile-nav-overlay {
+    display: none;
+  }
+
+  #nav-bar {
+    grid-template-columns: auto auto 1fr;
+    padding: 8px 20px;
+    gap: 12px;
+
+    #desktop-links {
+      display: flex;
+      gap: 16px;
+
+      p {
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    #search-bar-container {
+      gap: 8px;
+      #search-bar {
+        width: min(100%, 360px);
       }
     }
   }

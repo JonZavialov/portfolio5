@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Default from "./states/Default";
 import Terminal from "./Terminal";
 import Resume from "./states/Resume";
@@ -6,14 +7,12 @@ import ProjectDisplay from "./states/win98/ProjectDisplay";
 import FileView from "./states/code/FileView";
 
 function MainContainer({ page, setPage, terminalText, addText }) {
+  const [showTerminal, setShowTerminal] = useState(false);
+
   const pages = {
     home: <Default setParent={setPage} />,
     resume: (
-      <Resume
-        setParent={setPage}
-        addToTerminal={addText}
-        goBack={() => setPage("home")}
-      />
+      <Resume setParent={setPage} addToTerminal={addText} goBack={() => setPage("home")} />
     ),
     "win98-readme": <Readme addText={addText} />,
     win98: (
@@ -32,18 +31,24 @@ function MainContainer({ page, setPage, terminalText, addText }) {
     ),
     code: <FileView path={page.split(" ")[1]} />,
     segmint: (
-      <ProjectDisplay
-        addText={addText}
-        displayName="Segmint"
-        URL="https://segmint.jonzav.me"
-      />
+      <ProjectDisplay addText={addText} displayName="Segmint" URL="https://segmint.jonzav.me" />
     ),
   };
 
   return (
     <div id="main-container">
-      {pages[page.split(" ")[0]]}
-      <Terminal addText={terminalText} />
+      <div id="page-content">{pages[page.split(" ")[0]]}</div>
+      <button
+        type="button"
+        id="terminal-toggle"
+        onClick={() => setShowTerminal(!showTerminal)}
+        aria-expanded={showTerminal}
+      >
+        {showTerminal ? "Hide" : "Show"} Terminal
+      </button>
+      <div className={showTerminal ? "terminal-shell open" : "terminal-shell"}>
+        <Terminal addText={terminalText} />
+      </div>
     </div>
   );
 }

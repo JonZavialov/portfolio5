@@ -3,7 +3,7 @@ import resume from "../../../assets/resume.png";
 import { useState } from "react";
 import redirect from "../../../utils/redirect";
 
-function Resume({ addToTerminal, goBack, mobileView }) {
+function Resume({ addToTerminal, goBack }) {
   const [loading, setLoading] = useState(true);
 
   document.title = "Jonathan Zavialov | Resume";
@@ -11,22 +11,19 @@ function Resume({ addToTerminal, goBack, mobileView }) {
   return (
     <div id="resume-display">
       <div id="buttons-row">
-        {mobileView && (
-          <p onClick={goBack}>
-            <i className="fa fa-arrow-left"></i>
-            Back
-          </p>
-        )}
-        <p
-          onClick={() =>
-            redirect("/JonathanZavialov-Resume.pdf", addToTerminal)
-          }
+        <button type="button" onClick={goBack}>
+          <i className="fa fa-arrow-left"></i>
+          Home
+        </button>
+        <button
+          type="button"
+          onClick={() => redirect("/JonathanZavialov-Resume.pdf", addToTerminal)}
         >
           Full Screen / Download
-        </p>
+        </button>
       </div>
       {loading && <h1>Loading...</h1>}
-      <img src={resume} alt="resume" onLoad={() => setLoading(false)} />
+      <img src={resume} alt="Resume" onLoad={() => setLoading(false)} loading="lazy" />
     </div>
   );
 }
